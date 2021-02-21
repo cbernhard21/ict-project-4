@@ -204,6 +204,25 @@ main {
   }
 }
 
+
+/* LOGIN FORM */
+
+.form-wrapper {
+  border: 1px solid pink;
+  background-color: var(--primary-text);
+  color: var(--grey);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.form-container {
+  border: 1px solid green;
+}
+
+
+/* FOOTER SECTION */
+
 footer {
   grid-row: 2/3;
   background-color: rgba(0, 0, 0, 0.5);
@@ -215,6 +234,3 @@ footer {
 footer p {
   margin: .5rem 0;
 }
-
-
-/* MEDIA QUERIES */
