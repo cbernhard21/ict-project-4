@@ -1,0 +1,220 @@
+/* RESETS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+
+/* VARIABLES */
+
+:root {
+  --primary-text: #f6f6f6;
+  --secondary-text: #98ded9;
+  --bg-color: #161d6f;
+  --accent-color: #c7ffd8;
+  --grey: #3d3d3d;
+}
+
+html {
+  height: 100%;
+  /* background-color: var(--bg-color); */
+  color: var(--primary-text);
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--primary-text);
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+
+/* UTILITIES */
+
+.container {
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*GENERAL STYLES */
+
+.content {
+  display: grid;
+  grid-template-rows: auto minmax(10px, 1fr);
+}
+
+header {
+  background-color: var(--grey);
+  height: 10vh;
+}
+
+.logo {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.logo-accent {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+
+/* NAV STYLES */
+
+.nav-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-main a {
+  font-weight: 700;
+}
+
+.nav-main a:hover {
+  color: var(--accent-color);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  padding-left: 2rem;
+}
+
+
+/* BURGER MENU ON MEDIUM SCREENS */
+
+.burger-menu {
+  width: 40px;
+  height: 40px;
+  display: none;
+  z-index: 3;
+  pointer: cursor;
+}
+
+.burger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+
+
+/* MEDIA QUERY FOR NAV ON MEDIUM AND SMALL SCREENS */
+
+@media screen and (max-width: 770px) {
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-main {
+    background-color: tomato;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform .5s ease-out;
+  }
+  .nav-list {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .slide {
+    transform: translateX(0);
+  }
+  .burger-move .top-line {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .burger-move .middle-line {
+    opacity: 0;
+  }
+  .burger-move .bottom-line {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+
+/* HERO SECTION */
+
+main {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../images/hero-img-burger-fries.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+}
+
+@media screen and (max-width: 770px) {
+  main {
+    background-position-x: 75%;
+  }
+}
+
+footer {
+  grid-row: 2/3;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 1rem 0;
+  height: 10vh;
+}
+
+footer p {
+  margin: .5rem 0;
+}
+
+
+/* MEDIA QUERIES */
