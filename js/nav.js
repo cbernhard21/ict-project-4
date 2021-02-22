@@ -7,7 +7,7 @@ Display header and nav on all the html pages
 
 'use strict'
 
-export const links = [{
+export const mainNavLinks = [{
     text: 'Home',
     href: 'index.html'
   },
@@ -21,8 +21,12 @@ export const links = [{
   },
   {
     text: 'Login',
-    href: 'dashboard.html'
-  }
+    href: 'login.html'
+  },
+  // {
+  //   text: 'Dashboard',
+  //   href: 'dashboard.html'
+  // }
 ]
 
 export function displayNavHtml(links) {

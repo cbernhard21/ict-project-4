@@ -36,32 +36,37 @@
     </header>
 
     <main>
-      <section class="hero container">
-        <div class="form-wrapper">
-          <div class="form-container">
-            <p>Admin Sign In</p>
-            <form action="#" method="POST">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="text" id="password">
-              </div>
-              <button type="submit" class="btn btn-submit">Log In</button>
-            </form>
+      <div class="container">
+        <p id="welcome-text"></p>
+
+        <div class="menu" id="menu">Menu Items</div>
+
+        <form action="#" method="POST" id="menu-item-form">
+          <div class="form-group">
+            <label for="item">Item:</label>
+            <input type="text" id="item">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" id="description">
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price">
+          </div>
+          <button type="submit" class="btn" id="menu-item-form-btn">Enter Item</button>
+        </form>
 
-      </section>
+
+      </div>
     </main>
-  </div>
 
-  <footer>
-    <p>Christopher Bernhard</p>
-    <p>University of Denver ICT 4510 Portfolio Assignment</p>
-  </footer>
+
+    <footer>
+      <p>Christopher Bernhard</p>
+      <p>University of Denver ICT 4510 Portfolio Assignment</p>
+    </footer>
+  </div>
 
   <script src="js/app.js" type="module"></script>
 </body>
