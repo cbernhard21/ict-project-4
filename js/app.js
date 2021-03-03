@@ -21,7 +21,6 @@ if (window.location.pathname === '/login.html') {
   handleLogin();
 }
 
-
 if (window.location.pathname === '/dashboard.html') {
   handleDashboard();
 }
