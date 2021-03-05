@@ -9,6 +9,8 @@ url: https://ict4510.herokuapp.com/api/login
 
 'use strict'
 
+import { hideLoader, showLoader, hideLogin } from './loader.js'
+
 //function exported to app.js to handle all login form
 export function handleLogin() {
 
@@ -35,6 +37,8 @@ export function handleLogin() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       } else {
+        showLoader();
+        hideLogin();
         const userData = await response.json();
         sessionStorage.setItem('userData', JSON.stringify(userData));
         location.href = 'dashboard.html';
