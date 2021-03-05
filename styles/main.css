@@ -47,7 +47,7 @@ a {
 
 h1 {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 400px) {
@@ -58,7 +58,7 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 
@@ -163,7 +163,7 @@ header {
 }
 
 .nav-main a {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .nav-main a:hover {
@@ -282,7 +282,7 @@ main {
   margin-bottom: 1.3rem;
 }
 
-.login-form input[type=text], .login-form input[type=password] {
+.login-form input[type=text], .login-form input[type=password], .menu-item-form input[type=text] {
   display: block;
   outline: none;
   border: none;
@@ -294,7 +294,7 @@ main {
   padding: .5rem 1rem;
 }
 
-.login-form input[type=text]:focus, .login-form input[type=text]:active, .login-form input[type=password]:focus, .login-form input[type=password]:active {
+.login-form input[type=text]:focus, .login-form input[type=text]:active, .login-form input[type=password]:focus, .login-form input[type=password]:active, .menu-item-form input[type=text]:focus, .menu-item-form input[type=text]:active {
   background-color: var(--bg-color);
   color: var(--primary-text);
 }
@@ -343,10 +343,18 @@ main {
   border-radius: 8px;
 }
 
+.dashboard-menu-input-form {
+  background-color: var(--grey);
+  border-radius: 8px;
+}
+
 .dashboard-header {
   grid-area: header;
   background-color: var(--primary-text);
-  padding: 1rem .5rem;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .dashboard-header h1 {
@@ -356,7 +364,16 @@ main {
 
 .dashboard-menu-items {
   grid-area: aside;
-  /* border: 1px solid green; */
+  background-color: var(--grey);
+  padding: 1rem;
+  height: fit-content;
+}
+
+.dashboard-menu-items h3 {
+  color: var(--primary-text);
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: .5rem;
 }
 
 .dashboard-menu-item {
@@ -373,7 +390,52 @@ main {
 
 .dashboard-menu-input-form {
   grid-area: main;
-  border: 1px solid lightblue;
+  color: var(--primary-text);
+  padding: 2rem 3rem;
+}
+
+.dashboard-menu-input-form input[type=text] {
+  width: 100%;
+}
+
+.fa-trash {
+  color: var(--grey);
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.fa-trash:hover {
+  color: var(--accent-color);
+}
+
+.btn-logout {
+  font-size: 1.4rem;
+  padding: .5rem 1.5rem;
+  background-color: var(--primary-text);
+  border: 1px solid var(--grey);
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.btn-logout:hover {
+  background-color: var(--grey);
+  color: var(--primary-text);
+}
+
+
+/* MENU PAGE */
+
+.menu-card {
+  background-color: var(--grey);
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hort-line {
+  width: 5px;
+  height: 100%;
+  background-color: var(--accent-color);
 }
 
 

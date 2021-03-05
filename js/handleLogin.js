@@ -9,7 +9,7 @@ url: https://ict4510.herokuapp.com/api/login
 
 'use strict'
 
-import { hideLoader, showLoader, hideLogin } from './loader.js'
+import { hideLoader, showLoader, hideLogin } from './utilities.js'
 
 //function exported to app.js to handle all login form
 export function handleLogin() {

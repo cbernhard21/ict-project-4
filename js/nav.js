@@ -7,37 +7,8 @@ Display header and nav on all the html pages
 
 'use strict'
 
-// export const mainNavLinks = [
-//   {
-//     text: 'Home',
-//     href: 'index.html'
-//   },
-//   {
-//     text: 'Menu',
-//     href: 'menu.html'
-//   },
-//   {
-//     text: 'Contact',
-//     href: 'contact.html'
-//   },
-//   {
-//     text: 'Login',
-//     href: 'login.html'
-//   }
-// ]
-
-// export function displayNavHtml(links) {
-//   const navList = document.querySelector('#nav-list');
-
-//   links.forEach(link => {
-//     let li = `<li class="nav-item"><a href="${link.href}">${link.text}</a></li>`
-//     navList.innerHTML += li;
-//   })
-// }
-
 export function displayHeader() {
   const header = document.querySelector('#header');
-  console.log('header function')
   header.innerHTML = `
   <div class="nav-wrapper container">
     <p class="logo">Bistro <span class="logo-accent">715</span></p>

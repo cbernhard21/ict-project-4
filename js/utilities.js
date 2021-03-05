@@ -12,3 +12,7 @@ export function hideLogin() {
   const loginForm = document.querySelector('.login-form')
   loginForm.classList.add('hidden');
 }
+
+export function resetForm(form) {
+  form.reset();
+}

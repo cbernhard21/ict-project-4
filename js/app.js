@@ -11,6 +11,7 @@ import { displayHeader } from './nav.js'
 import { navSlide } from './navSlide.js'
 import { handleLogin } from './handleLogin.js'
 import { handleDashboard } from './dashboard.js'
+import { menuPageDisplay } from './menuPageDisplay.js'
 
 displayHeader();
 navSlide();
@@ -35,4 +36,8 @@ if (window.location.pathname === '/login.html') {
 
 if (window.location.pathname === '/dashboard.html') {
   handleDashboard();
+}
+
+if (window.location.pathname === '/menu.html') {
+  menuPageDisplay();
 }

@@ -40,6 +40,7 @@
 
         <article class="dashboard-header">
           <h1 id="welcome-text"></h1>
+          <button class="btn btn-logout">Log Out</button>
         </article>
 
         <article class="dashboard-menu-items">
@@ -48,21 +49,22 @@
         </article>
 
         <article class="dashboard-menu-input-form">
-          <form action="#" method="POST" id="menu-item-form">
+          <h2>Add Menu Items</h2>
+          <form action="#" method="POST" id="menu-item-form" class="menu-item-form">
             <div class="form-group">
-              <label for="item">Item:</label>
-              <input type="text" id="item">
+              <label for="item" class="login-form-label">Item:</label>
+              <input type="text" id="item" required>
             </div>
             <div class="form-group">
-              <label for="description">Description:</label>
-              <input type="text" id="description">
+              <label for="description" class="login-form-label">Description:</label>
+              <input type="text" id="description" required>
             </div>
             <div class="form-group">
-              <label for="price">Price:</label>
-              <input type="text" id="price">
+              <label for="price" class="login-form-label">Price:</label>
+              <input type="text" id="price" required>
             </div>
 
-            <button type="submit" class="btn" id="menu-item-form-btn">Enter Item</button>
+            <button type="submit" class="btn btn-login" id="menu-item-form-btn">Enter Item</button>
 
           </form>
         </article>

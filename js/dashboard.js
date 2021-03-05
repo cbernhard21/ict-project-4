@@ -1,3 +1,7 @@
+'use strict'
+
+import { resetForm } from './utilities.js'
+
 export function handleDashboard() {
 
   //Global varibles
@@ -7,6 +11,7 @@ export function handleDashboard() {
   const userFirstName = JSON.parse(sessionStorage.getItem('userData')).user.first_name;
   const userToken = JSON.parse(sessionStorage.getItem('userData')).user.token;
   const userApiKey = JSON.parse(sessionStorage.getItem('userData')).user.api_key;
+  console.log(userApiKey);
   const menuUrl = `https://ict4510.herokuapp.com/api/menus?api_key=${userApiKey}`;
   const menuItemFormBtn = document.querySelector('#menu-item-form-btn');
 
@@ -49,18 +54,18 @@ export function handleDashboard() {
     const price = document.querySelector('#price').value;
 
     const menuItemData = {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-        'x-access-token': userToken
-      },
-      body: JSON.stringify({
-        item: item,
-        price: price,
-        description: description
-      }),
-    }
-    //write try, fetch() and catch statment here
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'x-access-token': userToken
+        },
+        body: JSON.stringify({
+          item: item,
+          price: price,
+          description: description
+        }),
+      }
+      //write try, fetch() and catch statment here
     try {
       const res = await fetch(menuUrl, menuItemData);
       if (!res.ok) {
@@ -95,7 +100,7 @@ export function handleDashboard() {
   }
 
   function logOut() {
-    const logOutBtn = document.querySelector('.logout')
+    const logOutBtn = document.querySelector('.btn-logout')
     logOutBtn.addEventListener('click', (e) => {
       e.preventDefault();
       sessionStorage.clear();
@@ -103,10 +108,12 @@ export function handleDashboard() {
     })
   }
 
+
   //Event Listeners
   //event for adding menu item
   menuItemFormBtn.addEventListener('click', (e) => {
     e.preventDefault();
     sendMenuItems();
+    resetForm(menuItemForm);
   })
 };
