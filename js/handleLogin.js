@@ -41,7 +41,7 @@ export function handleLogin() {
         hideLogin();
         const userData = await response.json();
         sessionStorage.setItem('userData', JSON.stringify(userData));
-        location.href = 'dashboard.html';
+        window.location.href = './dashboard.html';
       }
     } catch (error) {
       console.log(`there was an issue ${error}`);
