@@ -15,24 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- My Styles -->
-  <link rel="stylesheet" href="styles/main.css" type="text/css">
+  <link rel="stylesheet" href="../styles/main.css" type="text/css">
 </head>
 
 <body>
   <div class="content">
     <header id="header">
-      <div class="nav-wrapper container">
-        <p class="logo">Bistro <span class="logo-accent">715</span></p>
-        <nav class="nav-main">
-          <!-- NAV LINKS IN JS FILE nav.js -->
-          <ul class="nav-list" id="nav-list"></ul>
-        </nav>
-        <div class="burger-menu">
-          <div class="burger-bar top-line"></div>
-          <div class="burger-bar middle-line"></div>
-          <div class="burger-bar bottom-line"></div>
-        </div>
-      </div>
+      <custom-header></custom-header>
     </header>
     <main>
       <div class="hero container">
@@ -44,13 +33,10 @@
       </div>
     </main>
 
+    <custom-footer></custom-footer>
 
-    <footer>
-      <p>Christopher Bernhard</p>
-      <p>University of Denver ICT 4510 Portfolio Assignment</p>
-    </footer>
   </div>
-  <script src="js/app.js" type="module"></script>
+  <script src="../js/app.js" type="module"></script>
 </body>
 
 </html>

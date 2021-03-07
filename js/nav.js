@@ -13,9 +13,8 @@ export function displayHeader() {
   <div class="nav-wrapper container">
     <p class="logo">Bistro <span class="logo-accent">715</span></p>
     <nav class="nav-main">
-
       <ul class="nav-list" id="nav-list">
-        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="/">Home</a></li>
         <li class="nav-item"><a href="menu.html">Menu</a></li>
         <li class="nav-item"><a href="contact.html">Contact</a></li>
         <li class="nav-item"><a href="login.html">Login</a></li>

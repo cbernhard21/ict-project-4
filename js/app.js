@@ -7,14 +7,11 @@ main script page to run all the scripts when the page loads
 
 'use strict'
 
-import { displayHeader } from './nav.js'
-import { navSlide } from './navSlide.js'
 import { handleLogin } from './handleLogin.js'
 import { handleDashboard } from './dashboard.js'
 import { menuPageDisplay } from './menuPageDisplay.js'
-
-displayHeader();
-navSlide();
+import '../components/footer.js'
+import '../components/header.js'
 
 function checkLogin() {
   if (sessionStorage.getItem('userData')) {
@@ -22,7 +19,6 @@ function checkLogin() {
   }
   return;
 }
-
 
 //checks if the user is on the login page
 //if so run the login script

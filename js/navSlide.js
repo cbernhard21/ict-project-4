@@ -7,7 +7,7 @@ Script for mobile nav to slide on and move the menu bars
 
 'use strict'
 
-export function navSlide() {
+function navSlide() {
   const burgerMenu = document.querySelector('.burger-menu');
   const navList = document.querySelector('.nav-main')
 
