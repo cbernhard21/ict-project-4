@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- My Styles -->
-  <link rel="stylesheet" href="../styles/main.css" type="text/css">
+  <link rel="stylesheet" href="styles/main.css" type="text/css">
 </head>
 
 <body>
@@ -23,9 +23,10 @@
     <custom-header id="header"></custom-header>
     <main>
       <div class="hero container">
-        <section id="menu">
-          <h2 class="menu-header">Menu</h2>
-          <div class="menu-wrapper"></div>
+        <section id="menu" class="menu-wrapper">
+          <div class="loader"></div>
+          <h2 class=" menu-header">Menu</h2>
+          <div class="menu-card-container"></div>
         </section>
 
       </div>
@@ -34,7 +35,7 @@
     <custom-footer></custom-footer>
 
   </div>
-  <script src="../js/app.js" type="module"></script>
+  <script src="js/app.js" type="module"></script>
 </body>
 
 </html>

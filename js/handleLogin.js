@@ -4,7 +4,6 @@ ICT 4510
 University Of Denver
 username: cbernhard
 password: ict4510@pp
-
 */
 
 'use strict'

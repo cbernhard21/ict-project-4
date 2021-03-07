@@ -104,7 +104,7 @@ export function handleDashboard() {
     logOutBtn.addEventListener('click', (e) => {
       e.preventDefault();
       sessionStorage.clear();
-      window.location.href = './index.html'
+      window.location.href = './login.html'
     })
   }
 

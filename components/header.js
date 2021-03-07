@@ -11,6 +11,21 @@ const template = document.createElement('template');
 template.innerHTML = `
 <link rel="stylesheet" href="../styles/main.css" type="text/css">
 <style>
+  header {
+    background-color: var(--bg-color);
+    padding: 4rem 0 .5rem 0;
+  }
+
+  .logo {
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  
+  .logo-accent {
+    font-weight: 700;
+    color: var(--accent-color);
+  }
+
   .nav-wrapper {
     height: 100%;
     display: flex;
@@ -43,63 +58,64 @@ template.innerHTML = `
 
   /* BURGER MENU ON MEDIUM SCREENS */
 
-.burger-menu {
-  width: 40px;
-  /* height: 40px; */
-  display: none;
-  z-index: 3;
-  cursor: pointer;
-}
+  .burger-menu {
+    width: 40px;
+    /* height: 40px; */
+    display: none;
+    z-index: 3;
+    cursor: pointer;
+  }
 
-.burger-bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px;
-}
+  .burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+  }
 
 /* MEDIA QUERY FOR NAV ON MEDIUM AND SMALL SCREENS */
 
-@media screen and (max-width: 770px) {
-  header {
-    padding: 2rem 0 .5rem 0;
+  @media screen and (max-width: 770px) {
+    header {
+      padding: 2rem 0 .5rem 0;
+    }
+    .burger-menu {
+      display: block;
+      cursor: pointer;
+    }
+    .nav-main {
+      background-color: tomato;
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      transform: translateX(100%);
+      transition: transform .5s ease-out;
+    }
+    .nav-list {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .slide {
+      transform: translateX(0);
+    }
+    .burger-move .top-line {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .burger-move .middle-line {
+      opacity: 0;
+    }
+    .burger-move .bottom-line {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
   }
-  .burger-menu {
-    display: block;
-    cursor: pointer;
-  }
-  .nav-main {
-    background-color: tomato;
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    transform: translateX(100%);
-    transition: transform .5s ease-out;
-  }
-  .nav-list {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .slide {
-    transform: translateX(0);
-  }
-  .burger-move .top-line {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  .burger-move .middle-line {
-    opacity: 0;
-  }
-  .burger-move .bottom-line {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-}
 </style>
+
 <header>
 <div class="nav-wrapper container">
   <p class="logo">Bistro <span class="logo-accent">715</span></p>
