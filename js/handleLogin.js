@@ -4,7 +4,7 @@ ICT 4510
 University Of Denver
 username: cbernhard
 password: ict4510@pp
-url: https://ict4510.herokuapp.com/api/login
+
 */
 
 'use strict'

@@ -100,7 +100,7 @@ template.innerHTML = `
   }
 }
 </style>
-
+<header>
 <div class="nav-wrapper container">
   <p class="logo">Bistro <span class="logo-accent">715</span></p>
   <nav class="nav-main">
@@ -117,6 +117,7 @@ template.innerHTML = `
     <div class="burger-bar bottom-line"></div>
   </div>
 </div>
+</header>
 `;
 
 class Header extends HTMLElement {
