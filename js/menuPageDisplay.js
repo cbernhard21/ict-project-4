@@ -1,6 +1,6 @@
 'use strict'
 
-import { hideLoader } from "./utilities.js";
+import { hideLoader } from "./helpers.js";
 
 export function menuPageDisplay() {
   const menuCardContainer = document.querySelector('.menu-card-container');

@@ -1,6 +1,6 @@
 'use strict'
 
-import { resetForm } from './utilities.js'
+import { resetForm } from './helpers.js'
 
 export function handleDashboard() {
 

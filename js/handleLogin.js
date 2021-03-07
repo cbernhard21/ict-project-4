@@ -8,7 +8,7 @@ password: ict4510@pp
 
 'use strict'
 
-import { hideLoader, showLoader, hideLogin } from './utilities.js'
+import { hideLoader, showLoader, hideLogin, showLogin, showErrorMessage, hideErrorMessage } from './helpers.js'
 
 //function exported to app.js to handle all login form
 export function handleLogin() {
@@ -18,6 +18,8 @@ export function handleLogin() {
 
   //Functions
   async function handleLoginSubmission() {
+    hideLogin();
+    showLoader();
     const username = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
     const url = 'https://ict4510.herokuapp.com/api/login';
@@ -34,10 +36,11 @@ export function handleLogin() {
     try {
       const response = await fetch(url, formData);
       if (!response.ok) {
+        hideLoader();
+        showLogin();
+        showErrorMessage();
         throw new Error(`HTTP error! status: ${response.status}`)
       } else {
-        showLoader();
-        hideLogin();
         const userData = await response.json();
         sessionStorage.setItem('userData', JSON.stringify(userData));
         window.location.href = 'dashboard.html';
@@ -50,6 +53,7 @@ export function handleLogin() {
   //Event Listeners
   loginBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    hideErrorMessage();
     handleLoginSubmission();
   })
 }
