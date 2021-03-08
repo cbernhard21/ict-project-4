@@ -7,7 +7,7 @@ export function handleDashboard() {
   //Global varibles
   const user = JSON.parse(sessionStorage.getItem('userData'));
   const menuItemForm = document.querySelector('#menu-item-form')
-  const menu = document.querySelector('#menu');
+  const menu = document.querySelector('#menu-items-list');
   const userFirstName = JSON.parse(sessionStorage.getItem('userData')).user.first_name;
   const userLastName = JSON.parse(sessionStorage.getItem('userData')).user.last_name;
   const userToken = JSON.parse(sessionStorage.getItem('userData')).user.token;

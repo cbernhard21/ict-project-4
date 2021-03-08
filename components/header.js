@@ -141,7 +141,7 @@ template.innerHTML = `
 
 <header>
 <div class="nav-wrapper container">
-  <p class="logo">Pub <span class="logo-accent">715</span></p>
+  <p class="logo">Pub <span class="logo-accent">82</span></p>
   <nav class="nav-main">
     <ul class="nav-list" id="nav-list">
       <li class="nav-item"><a href="/">Home</a></li>

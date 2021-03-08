@@ -15,11 +15,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 /* VARIABLES */
 
 :root {
-  /* --primary-text: #e6d5b8;
-  --secondary-text: #f0a500;
-  --bg-color: #4a3933;
-  --accent-color: rgb(228, 88, 38);
-  --grey: #3d3d3d; */
   --primary-text: #F3F3F3;
   --secondary-text: #E1E1E1;
   --bg-color: #141414;
@@ -142,13 +137,21 @@ h2 {
 /* HERO SECTION */
 
 main {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(../images/hero-img-burger-fries.jpg);
-  /* background-image: url(../images/hero-img-burger-fries.jpg); */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(../images/compressed/hero-img-burger-fries.jpg);
   background-blend-mode: saturation;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#home {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(../images/compressed/hero-img-burger-fries.jpg);
+}
+
+
+/* #dashboard {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(../images/compressed/empty-bar-min.jpg);
+} */
 
 #contact {
   background-color: var(--grey);
@@ -247,7 +250,7 @@ main {
 }
 
 .dashboard-menu-input-form {
-  background-color: var(--grey);
+  background-color: var(--primary-text);
   border-radius: 8px;
   height: max-content;
 }
@@ -268,13 +271,13 @@ main {
 
 .dashboard-menu-items {
   grid-area: aside;
-  background-color: var(--grey);
+  background-color: var(--primary-text);
   padding: 1rem;
   height: fit-content;
 }
 
 .dashboard-menu-items h3 {
-  color: var(--primary-text);
+  color: var(--grey);
   font-weight: 400;
   font-size: 1.8rem;
   margin-bottom: .5rem;
@@ -283,7 +286,7 @@ main {
 .dashboard-menu-item {
   width: 100%;
   border-radius: 5px;
-  background-color: var(--primary-text);
+  background-color: var(--secondary-text);
   margin-bottom: .5rem;
   padding: .5rem 1rem;
   display: flex;
@@ -294,12 +297,30 @@ main {
 
 .dashboard-menu-input-form {
   grid-area: main;
-  color: var(--primary-text);
+  color: var(--grey);
   padding: 2rem 3rem;
 }
 
 .dashboard-menu-input-form input[type=text] {
   width: 100%;
+}
+
+.menu-item-form input[type=text] {
+  display: block;
+  outline: none;
+  border: none;
+  background-color: var(--primary-text);
+  color: var(--grey);
+  border-left: 1px solid var(--bg-color);
+  border-bottom: 1px solid var(--bg-color);
+  border-bottom-left-radius: 5px;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+}
+
+.menu-item-form input[type=text]:focus, .menu-item-form input[type=text]:active {
+  background-color: var(--secondary-text);
+  color: var(--grey);
 }
 
 .fa-trash {
@@ -330,10 +351,16 @@ main {
 
 /* MENU PAGE */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-wrapper {
+  background-color: rgba(0, 0, 0, .8);
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .menu-card-container {
