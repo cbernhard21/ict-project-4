@@ -7,11 +7,12 @@ main script page to run all the scripts when the page loads
 
 'use strict'
 
-import { handleLogin } from './handleLogin.js'
-import { handleDashboard } from './dashboard.js'
-import { menuPageDisplay } from './menuPageDisplay.js'
-import '../components/footer.js'
-import '../components/header.js'
+import { handleLogin } from './handleLogin.js';
+import { handleDashboard } from './dashboard.js';
+import { menuPageDisplay } from './menuPageDisplay.js';
+import { displayMap } from './map.js';
+import '../components/footer.js';
+import '../components/header.js';
 
 function checkLogin() {
   if (sessionStorage.getItem('userData')) {
@@ -36,4 +37,8 @@ if (window.location.pathname === '/dashboard.html') {
 
 if (window.location.pathname === '/menu.html') {
   menuPageDisplay();
+}
+
+if (window.location.pathname === '/contact.html') {
+  displayMap();
 }

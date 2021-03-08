@@ -9,17 +9,20 @@ export function handleDashboard() {
   const menuItemForm = document.querySelector('#menu-item-form')
   const menu = document.querySelector('#menu');
   const userFirstName = JSON.parse(sessionStorage.getItem('userData')).user.first_name;
+  const userLastName = JSON.parse(sessionStorage.getItem('userData')).user.last_name;
   const userToken = JSON.parse(sessionStorage.getItem('userData')).user.token;
   const userApiKey = JSON.parse(sessionStorage.getItem('userData')).user.api_key;
-  console.log(userApiKey);
   const menuUrl = `https://ict4510.herokuapp.com/api/menus?api_key=${userApiKey}`;
   const menuItemFormBtn = document.querySelector('#menu-item-form-btn');
 
   //generates text for dashboard header
   function welcomeHtml() {
     const welcomeMessage = document.querySelector('#welcome-text');
-    const helloHTML = `Welcome ${userFirstName} to Your Dashboard`;
-    welcomeMessage.textContent = helloHTML;
+    const helloHTML = `
+                      <p class="small-text">Hello, ${userFirstName} ${userLastName}</p>
+                      <h1>Admin Dashboard</h1>
+                      `;
+    welcomeMessage.innerHTML = helloHTML;
   }
 
   //GET Function to get the menu items from the database
@@ -27,7 +30,7 @@ export function handleDashboard() {
     const response = await fetch(menuUrl);
     const menuData = await response.json();
     let html = ``;
-    console.log(menuData);
+    // console.log(menuData);
     menuData.menu.forEach(item => {
       html += `<li class="dashboard-menu-item">${item.item} <span class="hidden item-id">${item.id}</span><i class="fas fa-trash"></i></li>`;
     })

@@ -9,16 +9,39 @@ header component
 
 const template = document.createElement('template');
 template.innerHTML = `
-<link rel="stylesheet" href="../styles/main.css" type="text/css">
+
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    color: var(--primary-text);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
   header {
     background-color: var(--bg-color);
-    padding: 4rem 0 .5rem 0;
+    padding: 2rem 0 .5rem 0;
   }
 
   .logo {
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 3rem;
   }
   
   .logo-accent {
@@ -118,7 +141,7 @@ template.innerHTML = `
 
 <header>
 <div class="nav-wrapper container">
-  <p class="logo">Bistro <span class="logo-accent">715</span></p>
+  <p class="logo">Pub <span class="logo-accent">715</span></p>
   <nav class="nav-main">
     <ul class="nav-list" id="nav-list">
       <li class="nav-item"><a href="/">Home</a></li>
