@@ -63,6 +63,7 @@ template.innerHTML = `
 
   .nav-main a {
     font-weight: 400;
+    transition: color .2s ease-in;
   }
 
   .nav-main a:hover {
