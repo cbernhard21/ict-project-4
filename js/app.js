@@ -11,8 +11,10 @@ import { handleLogin } from './handleLogin.js';
 import { handleDashboard } from './dashboard.js';
 import { menuPageDisplay } from './menuPageDisplay.js';
 import { displayMap } from './map.js';
-import '../components/footer.js';
+import { getFooterHtml } from './displayHtmlElements.js';
 import '../components/header.js';
+
+getFooterHtml();
 
 function checkLogin() {
   if (sessionStorage.getItem('userData')) {

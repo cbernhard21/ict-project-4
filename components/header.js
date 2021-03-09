@@ -22,7 +22,7 @@ template.innerHTML = `
   }
 
   a {
-    color: var(--primary-text);
+    color: #F3F3F3;
     text-decoration: none;
     display: inline-block;
   }
@@ -93,7 +93,7 @@ template.innerHTML = `
   .burger-bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #F3F3F3;
     margin: 5px;
   }
 
@@ -105,10 +105,11 @@ template.innerHTML = `
     }
     .burger-menu {
       display: block;
+      z-index: 1101;
       cursor: pointer;
     }
     .nav-main {
-      background-color: tomato;
+      background-color: #2e2e2e;
       width: 100%;
       max-width: 100%;
       height: 100vh;
@@ -116,7 +117,7 @@ template.innerHTML = `
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 2;
+      z-index: 1100;
       transform: translateX(100%);
       transition: transform .5s ease-out;
     }
@@ -125,6 +126,11 @@ template.innerHTML = `
       justify-content: space-around;
       align-items: center;
     }
+
+    .nav-main a {
+      font-size: 1.5rem;
+    }
+
     .slide {
       transform: translateX(0);
     }
