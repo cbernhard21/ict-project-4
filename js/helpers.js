@@ -1,3 +1,11 @@
+/*
+Christoper Bernhard
+University Of Denver
+ICT 4510 - Final Project
+simple functions needed through out the project to be imported when needed
+*/
+
+
 export function showLoader() {
   const loader = document.querySelector('.loader');
   loader.classList.remove('hidden');

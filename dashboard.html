@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>An Awesome Restaurant</title>
+  <title>DK's Burger Bar - Admin Dashboard</title>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/af77942d5c.js" crossorigin="anonymous"></script>
@@ -32,16 +32,19 @@
 
         <article class="dashboard-menu-items">
           <h3>Menu Items</h3>
+          <div class="loader hidden"></div>
           <ul id="menu-items-list"></ul>
         </article>
 
         <article class="dashboard-menu-input-form">
-          <h2>Add Menu Items</h2>
+
           <form action="#" method="POST" id="menu-item-form" class="menu-item-form">
+            <h2>Add Menu Items</h2>
             <div class="form-group">
               <label for="item" class="login-form-label">Item:</label>
               <input type="text" id="item" required>
             </div>
+
             <div class="form-group">
               <label for="description" class="login-form-label">Description:</label>
               <textarea type="text" id="description" class="textarea" required></textarea>

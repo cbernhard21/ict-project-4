@@ -1,6 +1,18 @@
+/*
+Christoper Bernhard
+University Of Denver
+ICT 4510 - Final Project
+Contains all scripts for the dashboard page
+a GET function to get the menu items
+a POST function to send new items to the database
+a DELETE function to delete items from the database
+a display function to display all the menu items
+*/
+
+
 'use strict'
 
-import { resetForm } from './helpers.js'
+import { resetForm, showLoader, hideLoader } from './helpers.js'
 
 export function handleDashboard() {
 
@@ -25,15 +37,22 @@ export function handleDashboard() {
     welcomeMessage.innerHTML = helloHTML;
   }
 
-  //GET Function to get the menu items from the database
+  //GET Function to get the menu items from the database and display the HTML
   async function getDashboardMenu() {
+    showLoader();
     const response = await fetch(menuUrl);
     const menuData = await response.json();
     let html = ``;
-    // console.log(menuData);
     menuData.menu.forEach(item => {
-      html += `<li class="dashboard-menu-item">${item.item} <span class="hidden item-id">${item.id}</span><i class="fas fa-trash"></i></li>`;
+      html += `<li class="dashboard-menu-item">
+                <details>
+                  <summary>${item.item} <span class="hidden item-id">${item.id}</span><i class="fas fa-trash"></i></summary>
+                  <p>${item.price}</p>
+                  <p>${item.description}</p>
+                </details>
+              </li>`;
     })
+    hideLoader();
     menu.innerHTML = html;
     const deleteBtns = document.querySelectorAll('.fa-trash');
 
@@ -57,18 +76,17 @@ export function handleDashboard() {
     const price = document.querySelector('#price').value;
 
     const menuItemData = {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-          'x-access-token': userToken
-        },
-        body: JSON.stringify({
-          item: item,
-          price: price,
-          description: description
-        }),
-      }
-      //write try, fetch() and catch statment here
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        'x-access-token': userToken
+      },
+      body: JSON.stringify({
+        item: item,
+        price: price,
+        description: description
+      }),
+    }
     try {
       const res = await fetch(menuUrl, menuItemData);
       if (!res.ok) {
@@ -102,6 +120,7 @@ export function handleDashboard() {
     }
   }
 
+  //log the user out
   function logOut() {
     const logOutBtn = document.querySelector('.btn-logout')
     logOutBtn.addEventListener('click', (e) => {
@@ -113,7 +132,8 @@ export function handleDashboard() {
 
 
   //Event Listeners
-  //event for adding menu item
+
+  //event for adding menu item in the form
   menuItemFormBtn.addEventListener('click', (e) => {
     e.preventDefault();
     sendMenuItems();

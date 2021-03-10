@@ -2,7 +2,7 @@
 Christoper Bernhard
 University Of Denver
 ICT 4510 - Final Project
-header component
+header component, contains all the nav html, css and js
 */
 
 'use strict'
@@ -148,7 +148,7 @@ template.innerHTML = `
 
 <header>
 <div class="nav-wrapper container">
-  <p class="logo">Pub <span class="logo-accent">82</span></p>
+  <h1 class="logo">DK's <span class="logo-accent">Burger</span> Bar</h1>
   <nav class="nav-main">
     <ul class="nav-list" id="nav-list">
       <li class="nav-item"><a href="/">Home</a></li>

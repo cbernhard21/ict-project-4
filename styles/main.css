@@ -76,6 +76,7 @@ h2 {
   width: 95%;
   max-width: 1300px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .hidden {
@@ -84,6 +85,7 @@ h2 {
 
 .element-wrapper {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,6 +152,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 #contact {
@@ -160,6 +163,52 @@ main {
   main {
     background-position-x: 75%;
   }
+}
+
+
+/* HOME SECTION */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.home-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-title {
+  font-size: 8rem;
+  font-weight: 300;
+}
+
+.home-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.btn-menu {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  padding: .5rem 3.5rem;
+  transition: background .2s ease-in-out;
+}
+
+.btn-menu:hover {
+  background-color: transparent;
 }
 
 
@@ -248,7 +297,7 @@ main {
   grid-template-areas: "header header" "aside main";
   grid-gap: 1rem;
   color: var(--grey);
-  margin: 2.5rem auto;
+  margin-top: 1rem;
 }
 
 .dashboard-wrapper>article {
@@ -263,8 +312,7 @@ main {
 
 .dashboard-header {
   grid-area: header;
-  /* background-color: var(--primary-text); */
-  padding: 1rem 1rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -280,6 +328,7 @@ main {
   background-color: var(--primary-text);
   padding: 1rem;
   height: fit-content;
+  margin-bottom: 1rem;
 }
 
 .dashboard-menu-items h3 {
@@ -296,16 +345,41 @@ main {
   color: var(--secondary-text);
   margin-bottom: .5rem;
   padding: .5rem 1rem;
-  display: flex;
-  justify-content: space-between;
   font-size: 1.2rem;
+  transition: transform .2s ease-in-out;
+}
+
+.dashboard-menu-item summary {
   text-transform: uppercase;
+  border: none;
+  position: relative;
+}
+
+.dashboard-menu-item p {
+  margin-left: 25px;
+}
+
+details[open]>summary,
+details[open]>summary:active,
+details[open]>summary:focus,
+summary:active,
+summary:focus {
+  outline: none;
+  border: none;
+}
+
+.dashboard-menu-item:hover {
+  transform: scale(1.05);
+}
+
+.dashboard-menu-item summary:hover {
+  cursor: pointer;
 }
 
 .dashboard-menu-input-form {
   grid-area: main;
   color: var(--grey);
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
 }
 
 .dashboard-menu-input-form input[type=text] {
@@ -317,12 +391,18 @@ main {
   height: 100px;
 }
 
+.menu-item-form {
+  background-color: var(--primary-text);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
 .menu-item-form input[type=text],
 .dashboard-menu-input-form textarea {
   display: block;
   outline: none;
   border: none;
-  background-color: var(--secondary-text);
+  background-color: var(--primary-text);
   color: var(--grey);
   border-left: 1px solid var(--bg-color);
   border-bottom: 1px solid var(--bg-color);
@@ -335,11 +415,14 @@ main {
 .menu-item-form input[type=text]:active,
 .dashboard-menu-input-form textarea:focus,
 .dashboard-menu-input-form textarea:active {
-  background-color: var(--primary-text);
+  background-color: var(--secondary-text);
   color: var(--grey);
 }
 
 .fa-trash {
+  position: absolute;
+  top: 0;
+  right: 0;
   color: var(--secondary-text);
   cursor: pointer;
   transition: color .3s ease;
@@ -363,6 +446,14 @@ main {
 
 .btn-submit-menu-item {
   padding: 1rem;
+}
+
+@media screen and (max-width: 770px) {
+  .dashboard-wrapper {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-areas: "header" "main" "aside";
+  }
 }
 
 

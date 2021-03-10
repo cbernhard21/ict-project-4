@@ -14,6 +14,34 @@ import { displayMap } from './map.js';
 import { getFooterHtml } from './displayHtmlElements.js';
 import '../components/header.js';
 
+
+
+const pathname = window.location.pathname;
+console.log(pathname);
+
+function checkPage(pathname) {
+  if (pathname === '/login.html') {
+    const form = document.querySelector('#login');
+    form.style.visibility = 'hidden';
+    checkLogin();
+    form.style.visibility = 'visible';
+    handleLogin();
+  }
+
+  if (pathname === '/dashboard.html') {
+    handleDashboard();
+  }
+
+  if (pathname === '/menu.html') {
+    menuPageDisplay();
+  }
+
+  if (pathname === '/contact.html') {
+    displayMap();
+  }
+}
+
+checkPage(pathname);
 getFooterHtml();
 
 function checkLogin() {
@@ -23,24 +51,24 @@ function checkLogin() {
   return;
 }
 
-//checks if the user is on the login page
-//if so run the login script
-if (window.location.pathname === '/login.html') {
-  const form = document.querySelector('#login');
-  form.style.visibility = 'hidden';
-  checkLogin();
-  form.style.visibility = 'visible';
-  handleLogin();
-}
+//start page check - check which page the user is on and runs the appropriate script
+// if (window.location.pathname === '/login.html') {
+//   const form = document.querySelector('#login');
+//   form.style.visibility = 'hidden';
+//   checkLogin();
+//   form.style.visibility = 'visible';
+//   handleLogin();
+// }
 
-if (window.location.pathname === '/dashboard.html') {
-  handleDashboard();
-}
+// if (window.location.pathname === '/dashboard.html') {
+//   handleDashboard();
+// }
 
-if (window.location.pathname === '/menu.html') {
-  menuPageDisplay();
-}
+// if (window.location.pathname === '/menu.html') {
+//   menuPageDisplay();
+// }
 
-if (window.location.pathname === '/contact.html') {
-  displayMap();
-}
+// if (window.location.pathname === '/contact.html') {
+//   displayMap();
+// }
+//end page check

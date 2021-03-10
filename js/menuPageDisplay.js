@@ -1,3 +1,11 @@
+/*
+Christoper Bernhard
+University Of Denver
+ICT 4510 - Final Project
+script to fetch menu items and display the items on the menu.html page
+*/
+
+
 'use strict'
 
 import { hideLoader } from "./helpers.js";

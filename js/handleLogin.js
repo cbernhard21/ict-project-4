@@ -4,6 +4,7 @@ ICT 4510
 University Of Denver
 username: cbernhard
 password: ict4510@pp
+this script handles the user login
 */
 
 'use strict'

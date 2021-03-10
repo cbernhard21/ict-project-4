@@ -1,7 +1,8 @@
 /* Christopher Bernhard
 ICT 4510
 University of Denver
-script to display map for final project */
+script to display map for final project
+*/
 
 
 'use strict'
