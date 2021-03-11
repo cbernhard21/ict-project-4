@@ -131,7 +131,6 @@ export function handleDashboard() {
     })
   }
 
-
   //Event Listeners
 
   //event for adding menu item in the form
