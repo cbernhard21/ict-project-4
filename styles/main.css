@@ -154,11 +154,13 @@ main {
   background-size: cover;
 }
 
-#contact {
-  background-color: var(--grey);
-}
 
-#dashboard {
+/* #contact {
+  background-color: var(--grey);
+} */
+
+#dashboard,
+#contact {
   background: rgb(20, 20, 20);
   background: linear-gradient(180deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 1) 23%, rgba(153, 153, 153, 1) 100%);
 }
