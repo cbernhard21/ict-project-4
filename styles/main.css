@@ -301,6 +301,7 @@ main {
 
 .btn-login {
   background-color: var(--accent-color);
+  border-radius: 0;
   color: var(--primary-text);
   width: 100%;
   font-size: 1.8rem;
@@ -370,10 +371,8 @@ main {
 
 .dashboard-menu-items {
   grid-area: aside;
-  background-color: var(--primary-text);
   padding: 1rem;
-  height: fit-content;
-  margin-bottom: 1rem;
+  margin-bottom: 1.9rem;
 }
 
 .dashboard-menu-items h3 {
@@ -457,7 +456,6 @@ summary:focus {
   color: var(--grey);
   border-left: 1px solid var(--bg-color);
   border-bottom: 1px solid var(--bg-color);
-  border-bottom-left-radius: 5px;
   font-size: 1.2rem;
   padding: .5rem 1rem;
 }

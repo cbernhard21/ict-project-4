@@ -3,12 +3,11 @@ Christoper Bernhard
 University Of Denver
 ICT 4510 - Final Project
 Contains all scripts for the dashboard page
-a GET function to get the menu items
-a POST function to send new items to the database
-a DELETE function to delete items from the database
-a display function to display all the menu items
+- a GET function to get the menu items
+- a POST function to send new items to the database
+- a DELETE function to delete items from the database
+- a display function to display all the menu items
 */
-
 
 'use strict'
 
@@ -94,7 +93,6 @@ export function handleDashboard() {
         throw new Error(`HTTP error! status: ${res.status}`)
       } else {
         const data = await res.json();
-        //  console.log(data);
         getDashboardMenu();
       }
     } catch (err) {
@@ -114,7 +112,6 @@ export function handleDashboard() {
     }
     try {
       const res = await fetch(deleteUrl, deleteMenuItemSettings);
-      //  console.log(res);
       getDashboardMenu();
     } catch (error) {
       console.log(error)

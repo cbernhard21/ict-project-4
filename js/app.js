@@ -13,6 +13,7 @@ import { menuPageDisplay } from './menuPageDisplay.js';
 import { displayMap } from './map.js';
 import { getFooterHtml } from './displayHtmlElements.js';
 import '../components/header.js';
+import { hideLoader, showLogin } from './helpers.js';
 
 
 const path = window.location.pathname;
@@ -20,10 +21,9 @@ const path = window.location.pathname;
 //check the page to know which script to run
 function checkPage(pathname) {
   if (pathname === '/login.html') {
-    const form = document.querySelector('#login');
-    form.style.visibility = 'hidden';
     checkLogin();
-    form.style.visibility = 'visible';
+    hideLoader();
+    showLogin();
     handleLogin();
   }
 

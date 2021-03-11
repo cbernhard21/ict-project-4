@@ -4,7 +4,6 @@ University of Denver
 script to display map for final project
 */
 
-
 'use strict'
 
 export function displayMap() {

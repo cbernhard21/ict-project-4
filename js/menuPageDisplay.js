@@ -5,7 +5,6 @@ ICT 4510 - Final Project
 script to fetch menu items and display the items on the menu.html page
 */
 
-
 'use strict'
 
 import { hideLoader } from "./helpers.js";
@@ -21,7 +20,6 @@ export function menuPageDisplay() {
     const response = await fetch(menuUrl);
     const menuData = await response.json();
     let menuPageHtml = ``;
-    console.log(menuData);
     menuData.menu.forEach(item => {
       menuPageHtml += `<article class="menu-card">
                 <div class="hort-line"></div>
