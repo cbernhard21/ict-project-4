@@ -15,10 +15,9 @@ import { getFooterHtml } from './displayHtmlElements.js';
 import '../components/header.js';
 
 
+const path = window.location.pathname;
 
-const pathname = window.location.pathname;
-console.log(pathname);
-
+//check the page to know which script to run
 function checkPage(pathname) {
   if (pathname === '/login.html') {
     const form = document.querySelector('#login');
@@ -41,7 +40,7 @@ function checkPage(pathname) {
   }
 }
 
-checkPage(pathname);
+checkPage(path);
 getFooterHtml();
 
 function checkLogin() {
@@ -50,25 +49,3 @@ function checkLogin() {
   }
   return;
 }
-
-//start page check - check which page the user is on and runs the appropriate script
-// if (window.location.pathname === '/login.html') {
-//   const form = document.querySelector('#login');
-//   form.style.visibility = 'hidden';
-//   checkLogin();
-//   form.style.visibility = 'visible';
-//   handleLogin();
-// }
-
-// if (window.location.pathname === '/dashboard.html') {
-//   handleDashboard();
-// }
-
-// if (window.location.pathname === '/menu.html') {
-//   menuPageDisplay();
-// }
-
-// if (window.location.pathname === '/contact.html') {
-//   displayMap();
-// }
-//end page check

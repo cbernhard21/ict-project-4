@@ -99,6 +99,12 @@ template.innerHTML = `
 
 /* MEDIA QUERY FOR NAV ON MEDIUM AND SMALL SCREENS */
 
+  @media screen and (max-width: 500px) {
+    .logo {
+      font-size: 2rem;
+    }
+  }
+
   @media screen and (max-width: 770px) {
     header {
       padding: 2rem 0 .5rem 0;

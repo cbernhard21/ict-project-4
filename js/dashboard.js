@@ -45,8 +45,9 @@ export function handleDashboard() {
     let html = ``;
     menuData.menu.forEach(item => {
       html += `<li class="dashboard-menu-item">
+      <i class="fas fa-trash"></i>
                 <details>
-                  <summary>${item.item} <span class="hidden item-id">${item.id}</span><i class="fas fa-trash"></i></summary>
+                  <summary>${item.item} <span class="hidden item-id">${item.id}</span></summary>
                   <p>${item.price}</p>
                   <p>${item.description}</p>
                 </details>
